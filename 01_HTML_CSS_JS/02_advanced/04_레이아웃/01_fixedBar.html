@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      /* positon fixed : 고정 레이아웃
+    
+        특징
+        - 스크롤을 내려도 화면의 특정 위치에 고정
+        -일반적인 문서 흐름에서 제외되어 다른 요소들의 위치를 무시함
+          */
+      .top_bar {
+        background-color: red;
+        height: 50px;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+      }
+      .left_bar {
+        background-color: blue;
+        width: 50px;
+        top: 50px;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top_bar"></div>
+    <div class="left_bar"></div>
+    <div class="container">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
+        maiores temporibus dolor ipsum aliquam et dolores fugit corporis culpa a
+        nulla itaque voluptates natus, tempore quasi at, quidem sapiente
+        blanditiis officiis ab quis repellendus voluptate? Maiores magni soluta
+        modi voluptates quia harum aliquam sunt dolor voluptatibus in? Sed,
+        dolores, hic odio necessitatibus, unde doloribus labore saepe voluptas
+        quaerat esse aliquam corporis. Consequuntur sed voluptas praesentium
+        voluptatibus, error modi iusto rem ea similique, aperiam debitis esse
+        nam ducimus dolore earum vitae? Reprehenderit quaerat fugit amet,
+        assumenda corporis adipisci odit delectus vitae facilis necessitatibus,
+        voluptatibus ab rem architecto vel. Obcaecati, dolores.
+      </p>
+
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet
+        maiores temporibus dolor ipsum aliquam et dolores fugit corporis culpa a
+        nulla itaque voluptates natus, tempore quasi at, quidem sapiente
+        blanditiis officiis ab quis repellendus voluptate? Maiores magni soluta
+        modi voluptates quia harum aliquam sunt dolor voluptatibus in? Sed,
+        dolores, hic odio necessitatibus, unde doloribus labore saepe voluptas
+        quaerat esse aliquam corporis. Consequuntur sed voluptas praesentium
+        voluptatibus, error modi iusto rem ea similique, aperiam debitis esse
+        nam ducimus dolore earum vitae? Reprehenderit quaerat fugit amet,
+        assumenda corporis adipisci odit delectus vitae facilis necessitatibus,
+        voluptatibus ab rem architecto vel. Obcaecati, dolores.
+      </p>
+    </div>
+  </body>
+</html>

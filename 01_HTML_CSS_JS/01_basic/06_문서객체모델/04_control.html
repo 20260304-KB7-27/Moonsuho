@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script스니펫</title>
+    <script>
+      window.onload = function () {
+        input = '';
+        for (let i = 0; i < 10; i++) {
+          input += '<h1>Header -' + i + '</h1>';
+        }
+        //단순 텍스트로 출력
+        document.body.textContent = input;
+
+        //HTML 태그가 적용되도록 출력
+        //document.body.innerHTML = input;
+        console.log(input);
+      };
+    </script>
+  </head>
+
+  <body>
+    <div></div>
+  </body>
+</html>

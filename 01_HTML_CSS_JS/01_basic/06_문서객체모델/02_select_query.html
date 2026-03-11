@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script스니펫</title>
+    <script>
+      window.onload = function () {
+        //querySelector
+        //주어진 CSS 선택자에 일치하는 첫번째 요소를 선택한다
+        const headers = document.querySelector('h1');
+        headers.style.color = 'orange';
+
+        const headers2 = document.querySelector('.classtest');
+        headers2.style.color = 'red';
+
+        const headers3 = document.querySelector('#idtest');
+        headers3.style.color = 'blue';
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1>header</h1>
+    <h1 class="classtest">header</h1>
+    <h1 id="idtest">header</h1>
+  </body>
+</html>

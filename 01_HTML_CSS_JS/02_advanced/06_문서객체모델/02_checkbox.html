@@ -6,17 +6,32 @@
     <title>Script스니펫</title>
     <script>
       window.onload = function () {
-        let checkbox = document.getElementsByName('food');
+        //나의 방식
+        // let checkbox = document.getElementsByName('food');
 
+        // let btn = document.getElementById('btn');
+        // btn.onclick = function () {
+        //   for (let i = 0; i < checkbox.length; i++) {
+        //     let value = checkbox[i].value;
+        //     if (checkbox[i].checked) {
+        //       console.log(value);
+        //     }
+        //   }
+        // };
+
+        //정석 정답
         let btn = document.getElementById('btn');
-        btn.onclick = function () {
-          for (let i = 0; i < checkbox.length; i++) {
-            let value = checkbox[i].value;
-            if (checkbox[i].checked) {
-              console.log(value);
+        btn.addEventListener('click', function () {
+          let result = [];
+          let foods = document.getElementsByName('food');
+          for (let i = 0; i < foods.length; i++) {
+            let food = foods.item(i);
+            if (food.checked) {
+              result.push(food.value);
             }
           }
-        };
+          console.log(result);
+        });
       };
     </script>
   </head>

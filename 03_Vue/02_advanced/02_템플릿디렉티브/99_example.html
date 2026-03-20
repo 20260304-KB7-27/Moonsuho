@@ -23,12 +23,11 @@
       </ul>
 
       <!-- 아래의 div를 완성하세요 -->
-      <div class="post-content">
+      <div class="post-content" v-if="selectPost">
         <h2>{{selectPost.title}}</h2>
         {{selectPost.content}}
         <br />
-        //닫기버튼 미완성
-        <button>닫기</button>
+        <button @click="closePost">닫기</button>
       </div>
     </div>
 
@@ -101,14 +100,19 @@
           ]);
 
           // 아래에 화면처럼 동작하도록 구현해보세요
-          const selectPost = ref('');
+          const selectPost = ref(null);
           const clickToMenu = (post) => {
             selectPost.value = post;
+          };
+
+          const closePost = () => {
+            selectPost.value = null;
           };
           return {
             posts,
             selectPost,
             clickToMenu,
+            closePost,
           };
         },
       }).mount('#app');

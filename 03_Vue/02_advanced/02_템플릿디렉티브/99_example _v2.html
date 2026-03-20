@@ -1,4 +1,3 @@
-//목록 클릭하면 박스가 나오게 /토글은 삼항연산자로
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,31 +12,24 @@
       <!-- @click = "selectPost(post)" post정보를 인자로 전달 가능 -->
       <!-- 아래의 목록을 완성하세요 -->
       <ul>
-        <li
-          class="post-item"
-          v-for="(post,index) in posts"
-          :key="post.no"
-          @click="clickToMenu(post)"
-        >
-          {{post.no}}. {{post.title}}
-          <div v-if =" ">▲ ▼</div>
+        <li v-for="(post,index) in posts" :key="post.no">
+          <div class="post-item" @click="clickToMenu(post)">
+            {{post.no}}. {{post.title}}
+            <span>{{ selectPost === post ? '▲' : '▼'}}</span>
+          </div>
+
+          <!-- 아래의 div를 완성하세요 -->
+          <div class="post-content" v-if="selectPost === post">
+            <h2>{{selectPost.title}}</h2>
+            {{selectPost.content}}
+            <br />
+            <button @click="closePost">닫기</button>
+          </div>
         </li>
       </ul>
-
-      <!-- 아래의 div를 완성하세요 -->
-      <div class="post-content">
-        <h2>{{selectPost.title}}</h2>
-        {{selectPost.content}}
-        <br />
-        <button onclick="close()">닫기</button>
-      </div>
     </div>
 
     <script>
-      //닫기버튼 미완성
-      function close() {
-        document.getElementsByClassName('post-content').style.display = 'none';
-      }
       const { createApp, ref } = Vue;
 
       createApp({
@@ -106,14 +98,25 @@
           ]);
 
           // 아래에 화면처럼 동작하도록 구현해보세요
-          const selectPost = ref('');
+          const selectPost = ref(null);
           const clickToMenu = (post) => {
-            selectPost.value = post;
+            if (selectPost.value === post) {
+              selectPost.value = null;
+            } else {
+              selectPost.value = post;
+            }
+            //삼항연산자
+            //selectPost.value = selectPost.value === post ? null : post
+          };
+
+          const closePost = () => {
+            selectPost.value = null;
           };
           return {
             posts,
             selectPost,
             clickToMenu,
+            closePost,
           };
         },
       }).mount('#app');
